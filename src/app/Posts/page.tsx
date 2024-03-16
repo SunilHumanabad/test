@@ -2,8 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Accordion, AccordionItem} from "@nextui-org/react";
+
+interface PhotoData {
+    id: number;
+    title: string;
+    body: string;
+  }
+
 const Posts = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<PhotoData[]>([]);
     useEffect(() => {
         fetchData();
     }, []);

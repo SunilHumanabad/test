@@ -3,8 +3,16 @@ import ImagePost from "@/components/ImagePost";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
+interface PhotoData {
+  id: number;
+  title: string;
+  url: string;
+}
+
+
 const Images = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<PhotoData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -58,7 +66,7 @@ const Images = () => {
             </div>
           </div>
         ) : (
-          data.map((i) => <ImagePost  key={i.id} data={i} />)
+          data.map((photo) => <ImagePost  key={photo.id} data={photo} />)
         )}
       </div>
     </div>

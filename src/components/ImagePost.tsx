@@ -1,7 +1,14 @@
 import React from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 
-export default function ImagePost({data}) {
+interface PhotoData {
+    id: number;
+    title: string;
+    url: string;
+    // Add other properties as needed
+  }
+
+export default function ImagePost({data}: { data: PhotoData }) {
     return (
         <Card className="py-4 max-w-[400px]">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
